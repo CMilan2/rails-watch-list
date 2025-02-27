@@ -23,12 +23,4 @@ Movie.create(title: "Gladiator", overview: "A former Roman General sets out to e
   List.find_or_create_by!(name: genre_name)
 end
 
-10.times do
-  Bookmark.create!(
-    Faker::Movies::Ghostbusters.quote,
-    movie: Movie.order("RANDOM()").first,
-    list: List.order("RANDOM()").first
-  )
-end
-
 puts "done !"

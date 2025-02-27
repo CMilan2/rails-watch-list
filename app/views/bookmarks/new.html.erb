@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New association</h1>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.button :submit, class:"btn btn-outline-success" %>
+  <% end %>
+</div>

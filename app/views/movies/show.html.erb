@@ -1,0 +1,27 @@
+  <div class="banner"></div>
+<div class="container">
+    <div class="container">
+      <h1><%= @movie.title %></h1>
+    </div>
+</div>
+
+
+<style>
+  .banner{
+    background-image: url("<%= @movie.poster_url %>");
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 150rem;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    color: white;
+    height: 38rem;
+    margin-top: -8rem;
+  }
+
+  h1{
+    color: white;
+    margin-top: -12rem;
+  }
+</style>

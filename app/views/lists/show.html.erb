@@ -1,0 +1,23 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <ul class="list-group mb-3">
+    <% @list.movies.each do |list| %>
+      <li class="list-group-item"><%= list.title %></li>
+    <% end %>
+  </ul>
+
+  <% if @list.bookmarks.any? %>
+    <p><strong>Comment</strong></p>
+    <ul class="list-group">
+      <% @list.bookmarks.each do |bookmark| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= bookmark.comment %>
+          <%= link_to "Delete", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No comments available.</p>
+  <% end %>
+  <%= link_to "+ New link", new_list_bookmark_path(@list.id), class:"btn btn-outline-primary mt-3" %>
+</div>
